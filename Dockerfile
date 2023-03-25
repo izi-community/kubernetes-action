@@ -1,10 +1,10 @@
 FROM alpine:3.11
 
-ARG KUBECTL_VERSION="1.25.6"
+ARG KUBECTL_VERSION="1.15.10"
 
 RUN apk add py-pip curl
 RUN pip install awscli
-RUN curl -L -o /usr/bin/kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/darwin/amd64/kubectl
+RUN curl -L -o /usr/bin/kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/linux/amd64/kubectl
 RUN chmod +x /usr/bin/kubectl
 
 RUN curl -o /usr/bin/aws-iam-authenticator https://s3.us-west-2.amazonaws.com/amazon-eks/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
