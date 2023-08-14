@@ -2,8 +2,8 @@ FROM alpine:3.11
 
 ARG KUBECTL_VERSION="1.15.10"
 
-RUN apk add py-pip curl
-RUN pip install awscli
+RUN apk add gcc alpine-sdk python3-dev python3 py3-pip && pip3 install awscli
+RUN pip3 install awscli
 RUN curl -L -o /usr/bin/kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/linux/amd64/kubectl
 RUN chmod +x /usr/bin/kubectl
 
